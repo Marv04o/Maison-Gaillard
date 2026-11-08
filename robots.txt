@@ -1,0 +1,3 @@
+# Maquette en cours de validation : non indexée.
+User-agent: *
+Disallow: /
