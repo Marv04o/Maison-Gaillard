@@ -1,0 +1,1014 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maison Gaillard · Artisan burger &amp; pokébowl à Martigues</title>
+<meta name="description" content="Burgers artisanaux et pokébowls faits maison, face à l’étang de Berre, quai du Général-Leclerc à Martigues. Sur place, à emporter ou en livraison.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1B2E20">
+<link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/png" sizes="64x64" href="img/favicon-64.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<style>
+@font-face{font-family:"Archivo Gaillard";src:url("fonts/archivo.woff2") format("woff2");font-weight:100 900;font-stretch:62% 125%;font-style:normal;font-display:swap}
+@font-face{font-family:"Hanken Grotesk";src:url("fonts/hanken-grotesk.woff2") format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Instrument Serif";src:url("fonts/instrument-serif-italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
+/* Concept « Le badge et le quai » : le cercle de l’enseigne verte et or devient le cadre des photos, des tampons et du badge de prix ;
+   une ligne d’eau dorée relie les sections ; titres larges comme un emballage, étiquettes condensées, annotations en italique. */
+:root{
+  color-scheme: dark;
+  --nuit:#1B2E20;      /* fond principal, tiré de l’enseigne, assombri */
+  --enseigne:#375438;  /* vert du badge et de la façade */
+  --sauge:#8EA595;     /* fond des ardoises de la carte */
+  --sauge-clair:#DCE4DA;
+  --or:#F6BF34;        /* or du logo */
+  --creme:#F5EDDF;     /* papier, mie */
+  --mie-fonce:#ECE3D2; /* fond des infos pratiques */
+  --rouge:#C8302A;     /* le pain rouge, réservé aux temps forts */
+  --encre:#16261B;     /* texte sur fond clair */
+  --encre-doux:#3E5143;
+  --ligne: rgba(245,237,223,.18);
+
+  --f-display:"Archivo Gaillard","Arial Black","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-note:"Instrument Serif",Georgia,"Times New Roman",serif;
+
+  --t-hero: clamp(2.6rem, 6.3vw, 6.6rem);
+  --t-h2: clamp(2rem, 4.6vw, 4.4rem);
+  --t-h3: clamp(1.35rem, 2.2vw, 1.9rem);
+  --t-body: clamp(1rem, .96rem + .2vw, 1.125rem);
+  --t-small: .875rem;
+
+  --gutter: clamp(16px, 4vw, 56px);
+  --max: 1320px;
+  --header-h: 72px;
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 12px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--nuit);color:var(--creme);font-family:var(--f-body);font-size:var(--t-body);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px;border-radius:4px}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--or);color:var(--encre);padding:10px 16px;border-radius:999px;font-weight:700;text-decoration:none}
+.skip:focus{top:12px}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-left:max(var(--gutter), env(safe-area-inset-left,0px));padding-right:max(var(--gutter), env(safe-area-inset-right,0px))}
+
+/* ---------- Typographie ---------- */
+.display{font-family:var(--f-display);font-stretch:125%;font-weight:850;line-height:.92;letter-spacing:-.02em;text-transform:uppercase}
+.label{font-family:var(--f-display);font-stretch:68%;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;line-height:1.2}
+.note{font-family:var(--f-note);font-style:italic;font-weight:400;letter-spacing:0}
+h1,h2,h3,h4{margin:0;text-wrap:balance}
+p{margin:0}
+.eyebrow{display:flex;align-items:center;gap:.6em;color:var(--or)}
+.eyebrow::before{content:"";width:.7em;height:.7em;border-radius:50%;background:currentColor;flex:none}
+.h2{font-family:var(--f-display);font-stretch:125%;font-weight:850;font-size:var(--t-h2);line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+.h2 .note{text-transform:none;font-size:1.12em;letter-spacing:0;font-weight:400;color:var(--or)}
+.lead{max-width:58ch;font-size:clamp(1.05rem,1rem + .35vw,1.25rem);line-height:1.55}
+
+/* Marqueur « à confirmer » (maquette) */
+.tbc{font-style:normal;text-decoration:underline dotted 2px;text-decoration-color:var(--or);text-underline-offset:4px;cursor:help}
+.tbc::after{content:"?";display:inline-grid;place-items:center;width:1.15em;height:1.15em;margin-left:.25em;border-radius:50%;background:var(--or);color:var(--encre);font:700 .62em/1 var(--f-body);vertical-align:.35em;text-decoration:none}
+.on-light .tbc{text-decoration-color:var(--rouge)}
+.on-light .tbc::after{background:var(--rouge);color:#fff}
+
+/* ---------- Boutons ---------- */
+.btn{--bg:var(--or);--fg:var(--encre);position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;padding:.85em 1.5em;border-radius:999px;background:var(--bg);color:var(--fg);border:2px solid var(--bg);font-family:var(--f-display);font-stretch:85%;font-weight:750;font-size:1rem;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;cursor:pointer;overflow:hidden;isolation:isolate;transition:color .35s var(--ease),border-color .35s var(--ease),transform .2s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--creme);border-radius:inherit;transform:translateY(102%);transition:transform .45s var(--ease)}
+.btn:hover::before{transform:translateY(0)}
+.btn:hover{border-color:var(--creme)}
+.btn:active{transform:scale(.97)}
+.btn .arr{display:inline-block;transition:transform .35s var(--ease)}
+.btn:hover .arr{transform:translateX(4px)}
+.btn--ghost{--bg:transparent;--fg:var(--creme);border-color:rgba(245,237,223,.55)}
+.btn--ghost:hover{color:var(--encre)}
+.btn--dark{--bg:var(--nuit);--fg:var(--creme)}
+.btn--dark::before{background:var(--or)}
+.btn--dark:hover{color:var(--encre);border-color:var(--or)}
+
+/* ---------- En-tête ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--nuit)}
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(27,46,32,.92);backdrop-filter:saturate(1.2) blur(10px);-webkit-backdrop-filter:saturate(1.2) blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+.header.is-scrolled{border-bottom-color:var(--ligne)}
+.header__in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:var(--header-h)}
+.header__logo{display:block;flex:none}
+.header__logo img{height:54px;width:auto}
+.nav{display:flex;gap:clamp(14px,2vw,30px)}
+.nav a{position:relative;text-decoration:none;font-family:var(--f-display);font-stretch:80%;font-weight:650;text-transform:uppercase;letter-spacing:.06em;font-size:.86rem;padding:6px 0}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--or);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav a:hover::after,.nav a[aria-current="true"]::after{transform:scaleX(1)}
+.header__actions{display:flex;align-items:center;gap:18px}
+.header__tel{text-decoration:none;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.header__tel span{display:block;font-size:.72rem;opacity:.7;font-weight:500;line-height:1}
+.header .btn{min-height:44px;padding:.6em 1.2em;font-size:.9rem}
+.menu-btn{display:none;width:48px;height:48px;border-radius:50%;border:2px solid rgba(245,237,223,.4);background:transparent;cursor:pointer;place-items:center}
+.menu-btn span{display:block;width:20px;height:2px;background:var(--creme);position:relative}
+.menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--creme)}
+.menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+
+.drawer{position:fixed;inset:0;z-index:80;background:var(--nuit);display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 16px) max(20px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 24px) max(20px,env(safe-area-inset-left,0px));transform:translateY(-100%);transition:transform .5s var(--ease);visibility:hidden}
+.drawer.is-open{transform:none;visibility:visible}
+.drawer__top{display:flex;justify-content:space-between;align-items:center}
+.drawer__top img{height:38px;width:auto}
+.drawer__close{width:48px;height:48px;border-radius:50%;border:2px solid rgba(245,237,223,.4);background:transparent;font-size:1.6rem;line-height:1;cursor:pointer}
+.drawer nav{display:flex;flex-direction:column;margin-top:auto;margin-bottom:auto}
+.drawer nav a{font-family:var(--f-display);font-stretch:125%;font-weight:850;font-size:clamp(2.1rem,10vw,3.2rem);text-transform:uppercase;text-decoration:none;line-height:1.15;letter-spacing:-.02em;padding:4px 0;border-bottom:1px solid var(--ligne)}
+.drawer nav a:hover{color:var(--or)}
+.drawer__foot{display:grid;gap:10px}
+.drawer__foot p{opacity:.8;font-size:.95rem}
+
+/* ---------- Héros ---------- */
+.hero{position:relative;padding-block:clamp(24px,3.6vw,48px) 0;overflow:hidden}
+.hero__grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hero__text{display:grid;gap:clamp(18px,2.4vw,28px);position:relative;z-index:2}
+.hero__title{font-size:var(--t-hero)}
+.hero__title .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero__title .ln > span{display:inline-block}
+.hero__title .ln--note{font-family:var(--f-note);font-style:italic;font-weight:400;text-transform:none;letter-spacing:-.01em;color:var(--or);font-size:1.22em;line-height:.9;font-stretch:100%;margin-block:.02em .04em}
+.hero__lead{max-width:44ch;color:rgba(245,237,223,.88)}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px}
+.hero__visual{position:relative;aspect-ratio:1/1.02;max-width:640px;width:100%;justify-self:end}
+.disc{margin:0;border-radius:50%;overflow:hidden;position:absolute}
+.disc img{width:100%;height:100%;object-fit:cover}
+.disc--main{inset:12%;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.disc--main img{object-position:50% 58%;transform:scale(1.06);transition:transform 1.2s var(--ease)}
+.ring{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible}
+.ring text{font-family:var(--f-display);font-stretch:80%;font-weight:700;font-size:10.5px;letter-spacing:.1em;fill:var(--or);text-transform:uppercase}
+.ring--hero text{font-size:14px;letter-spacing:.06em}
+.ring--spin{animation:spin 48s linear infinite;transform-origin:50% 50%}
+.stamp{position:absolute;display:grid;place-items:center;text-align:center;border-radius:50%;background:var(--or);color:var(--encre);aspect-ratio:1;container-type:inline-size}
+.stamp > div{display:grid;gap:2cqw;justify-items:center;width:82%}
+.stamp span{font-family:var(--f-display);font-stretch:70%;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:8.5cqw;line-height:1.1}
+.stamp strong{display:block;font-family:var(--f-display);font-stretch:96%;font-weight:900;text-transform:uppercase;font-size:12.5cqw;line-height:.92;letter-spacing:-.01em}
+.stamp--hero{width:18%;right:-2%;top:-2%;transform:rotate(12deg);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.hero__facts{list-style:none;margin:clamp(48px,7vw,96px) 0 0;padding-block:20px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border-top:1px solid var(--ligne)}
+.hero__facts li{display:flex;flex-direction:column;gap:2px;font-size:.95rem;color:rgba(245,237,223,.8)}
+.hero__facts b{font-family:var(--f-display);font-stretch:70%;font-weight:750;text-transform:uppercase;letter-spacing:.04em;color:var(--creme);font-size:clamp(1.2rem,2vw,1.6rem);line-height:1.1}
+
+/* ---------- Sections ---------- */
+.section{padding-block:clamp(72px,10vw,140px);position:relative}
+.on-light{background:var(--creme);color:var(--encre)}
+.on-light .eyebrow{color:var(--rouge)}
+.on-light .h2 .note{color:var(--rouge)}
+.on-sauge{background:var(--sauge);color:var(--encre)}
+.on-sauge .eyebrow{color:var(--encre)}
+.sec-head{display:grid;gap:18px;margin-bottom:clamp(36px,5vw,64px)}
+.on-sauge .h2 .note{color:var(--encre)}
+.on-sauge .item p,.on-sauge .panel__note,.on-sauge .panel__fig figcaption{color:var(--encre)}
+.sec-head--split{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);align-items:end;gap:clamp(20px,4vw,64px)}
+
+/* Ligne d’eau */
+.wave{display:block;width:100%;height:28px;color:var(--or)}
+.wave path{fill:none;stroke:currentColor;stroke-width:2.5;stroke-linecap:round}
+.on-light .wave{color:var(--rouge)}
+.js .wave.draw path{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 1.8s var(--ease)}
+.js .wave.draw.is-in path{stroke-dashoffset:0}
+
+/* ---------- Burgers ---------- */
+.burgers__grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,80px);align-items:start}
+.badge-prix{position:sticky;top:calc(var(--header-h) + 32px);aspect-ratio:1;width:100%;max-width:440px;border-radius:50%;background:var(--nuit);color:var(--creme);display:grid;place-items:center;text-align:center}
+.badge-prix .ring text{fill:var(--or);font-size:12px;letter-spacing:.06em}
+.badge-prix__in{display:grid;gap:10px;justify-items:center;padding:18%}
+.badge-prix__tag{color:var(--or)}
+.badge-prix__name{font-family:var(--f-display);font-stretch:110%;font-weight:850;text-transform:uppercase;font-size:clamp(1.5rem,2.8vw,2.4rem);line-height:.95;letter-spacing:-.01em;min-height:2em;display:grid;place-items:center}
+.badge-prix__price{font-family:var(--f-display);font-stretch:62%;font-weight:800;font-size:clamp(3rem,6vw,5.2rem);line-height:.85;color:var(--or);font-variant-numeric:tabular-nums}
+.badge-prix__price sup{font-size:.4em;vertical-align:.95em;margin-left:.08em}
+.badge-prix__desc{font-size:.9rem;opacity:.8;max-width:26ch;min-height:4.2em}
+.badge-prix .swap{transition:opacity .25s,transform .25s var(--ease)}
+.badge-prix.is-swapping .swap{opacity:0;transform:translateY(6px)}
+.groupe{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:12px;border-bottom:3px solid var(--encre);margin-bottom:4px}
+.groupe .label{font-size:.95rem}
+.groupe .note{font-size:1.5rem;color:var(--rouge)}
+.carte-list{list-style:none;margin:0 0 48px;padding:0}
+.burger{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;padding:20px 0;border-bottom:1px solid rgba(22,38,27,.16);cursor:default;transition:padding .35s var(--ease)}
+.burger__name{font-family:var(--f-display);font-stretch:118%;font-weight:850;font-size:var(--t-h3);text-transform:uppercase;line-height:1;letter-spacing:-.01em;transition:color .3s}
+.burger__desc{grid-column:1/2;color:var(--encre-doux);max-width:52ch;font-size:1rem}
+.burger__tags{grid-column:1/2;display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tag{font-family:var(--f-display);font-stretch:70%;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.72rem;padding:4px 10px;border-radius:999px;border:1.5px solid currentColor;color:var(--encre-doux)}
+.tag--poulet{color:#8A5A12}
+.tag--veg{color:#2F6B3A}
+.price{grid-row:1/2;grid-column:2/3;font-family:var(--f-display);font-stretch:62%;font-weight:800;font-size:clamp(1.5rem,2.4vw,2rem);line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+.price small{font-size:.55em;margin-left:2px}
+.burger:hover,.burger.is-active{padding-left:14px}
+.burger:hover .burger__name,.burger.is-active .burger__name{color:var(--rouge)}
+.burger:focus-visible{outline-offset:-3px}
+.burgers__foot{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;padding-top:8px;font-size:.92rem;color:var(--encre-doux)}
+
+/* Bandeau photo */
+.bandeau{position:relative;height:clamp(320px,52vw,680px);overflow:hidden;background:var(--nuit)}
+.bandeau img{position:absolute;left:0;top:-10%;width:100%;height:120%;object-fit:cover;object-position:50% 50%;will-change:transform}
+.bandeau figcaption{position:absolute;left:0;right:0;bottom:0;padding-block:24px;background:linear-gradient(transparent,rgba(16,28,19,.82))}
+.bandeau figcaption .wrap{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.bandeau .note{font-size:clamp(1.4rem,3vw,2.4rem);color:var(--creme);line-height:1.1}
+.bandeau .label{color:var(--or)}
+
+
+/* Vignettes et badge photo (photos du site de commande) */
+.burger{grid-template-columns:76px minmax(0,1fr) auto;column-gap:18px}
+.burger__thumb{grid-column:1;grid-row:1/4;width:76px;height:76px;border-radius:50%;overflow:hidden;background:var(--enseigne);align-self:start;margin-top:2px}
+.burger__thumb img{width:100%;height:100%;object-fit:cover;object-position:30% 58%;transform:scale(1.2);transition:transform .5s var(--ease)}
+.burger:hover .burger__thumb img{transform:scale(1.5)}
+.burger__thumb--vide{display:grid;place-items:center;background:transparent;border:1.5px dashed rgba(22,38,27,.3);text-align:center;font-family:var(--f-display);font-stretch:70%;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.6rem;line-height:1.15;color:var(--encre-doux)}
+.burger .burger__name{grid-column:2;grid-row:1}
+.burger .price{grid-column:3;grid-row:1}
+.burger .burger__desc,.burger .burger__tags{grid-column:2/4}
+.badge-prix__photo{position:absolute;inset:11%;margin:0;border-radius:50%;overflow:hidden;opacity:0;transform:scale(.92);transition:opacity .35s var(--ease),transform .5s var(--ease)}
+.badge-prix__photo img{width:100%;height:100%;object-fit:cover;object-position:30% 55%;transform:scale(1.25)}
+.badge-prix.has-photo .badge-prix__photo{opacity:1;transform:none}
+.badge-prix.has-photo .badge-prix__in{opacity:0}
+.badge-prix__in{transition:opacity .3s}
+.badge-prix__chip{position:absolute;left:50%;bottom:6%;transform:translateX(-50%);display:flex;align-items:baseline;gap:12px;white-space:nowrap;padding:10px 18px;border-radius:999px;background:var(--nuit);color:var(--creme);box-shadow:0 10px 24px rgba(0,0,0,.25);opacity:0;transition:opacity .3s}
+.badge-prix.has-photo .badge-prix__chip{opacity:1}
+.badge-prix__chip b{font-family:var(--f-display);font-stretch:110%;font-weight:850;text-transform:uppercase;font-size:1rem}
+.badge-prix__chip span{font-family:var(--f-display);font-stretch:62%;font-weight:800;font-size:1.5rem;color:var(--or);font-variant-numeric:tabular-nums}
+
+/* ---------- Instagram ---------- */
+.insta{margin-top:clamp(40px,6vw,72px);padding-top:28px;border-top:1px solid rgba(22,38,27,.16);display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between}
+.insta .note{font-size:clamp(1.3rem,2.2vw,1.8rem);color:var(--enseigne);line-height:1.15}
+
+/* ---------- Carte (onglets) ---------- */
+.tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px 2px 12px;margin-bottom:28px;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;min-height:46px;padding:.55em 1.2em;border-radius:999px;border:2px solid var(--encre);background:transparent;color:var(--encre);font-family:var(--f-display);font-stretch:80%;font-weight:750;text-transform:uppercase;letter-spacing:.04em;font-size:.92rem;cursor:pointer;transition:background .25s,color .25s}
+.tab:hover{background:rgba(22,38,27,.08)}
+.tab[aria-selected="true"]{background:var(--encre);color:var(--sauge-clair)}
+.panel{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(24px,4vw,64px);align-items:start}
+.panel[hidden]{display:none}
+.panel__base{font-size:1rem;padding:14px 18px;border-radius:14px;background:rgba(245,237,223,.45);margin-bottom:8px}
+.panel__base b{font-family:var(--f-display);font-stretch:70%;text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;display:block;margin-bottom:2px}
+.item{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding:16px 0;border-bottom:1px solid rgba(22,38,27,.22)}
+.item h3{font-family:var(--f-display);font-stretch:112%;font-weight:800;text-transform:uppercase;font-size:clamp(1.1rem,1.6vw,1.35rem);line-height:1.1}
+.item p{grid-column:1/2;font-size:.98rem;color:var(--encre-doux)}
+.item .price{font-size:1.5rem}
+.panel__note{margin-top:16px;font-size:.88rem;color:var(--encre-doux)}
+.panel__fig{margin:0;position:sticky;top:calc(var(--header-h) + 24px)}
+.panel__fig img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:40% 60%;border-radius:50% 50% 18px 18px / 36% 36% 18px 18px}
+.panel__fig figcaption{margin-top:10px;font-size:1.05rem}
+.formule{display:grid;gap:6px;padding:22px;border-radius:20px;background:var(--nuit);color:var(--creme);margin-bottom:14px}
+.formule .price{color:var(--or);font-size:2.4rem}
+.formule h3{font-family:var(--f-display);font-stretch:112%;font-weight:850;text-transform:uppercase;font-size:1.35rem}
+.formule p{color:rgba(245,237,223,.85);font-size:.98rem}
+.formule__row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+
+/* ---------- Commander ---------- */
+.commander{background:var(--rouge);color:var(--creme)}
+.commander .eyebrow{color:var(--creme)}
+.commander .h2 .note{color:var(--or)}
+.cmd{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.cmd__card{position:relative;display:flex;flex-direction:column;gap:12px;min-height:250px;padding:26px;border-radius:24px;background:var(--creme);color:var(--encre);text-decoration:none;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+a.cmd__card:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 22px 40px rgba(60,10,8,.35)}
+.cmd__card h3{font-family:var(--f-display);font-stretch:118%;font-weight:850;text-transform:uppercase;font-size:clamp(1.4rem,2.3vw,1.9rem);line-height:1}
+.cmd__card p{color:var(--encre-doux);font-size:.98rem}
+.cmd__go{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:var(--f-display);font-stretch:80%;font-weight:750;text-transform:uppercase;letter-spacing:.04em}
+.cmd__go i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--nuit);color:var(--or);transition:transform .35s var(--ease)}
+a.cmd__card:hover .cmd__go i{transform:rotate(-45deg)}
+.cmd__card--tel{background:var(--nuit);color:var(--creme)}
+.cmd__card--tel p{color:rgba(245,237,223,.8)}
+.cmd__num{font-family:var(--f-display);font-stretch:70%;font-weight:800;font-size:clamp(2rem,3.4vw,2.8rem);line-height:1;color:var(--or);font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.cmd__btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.cmd__btns .btn{min-height:44px;padding:.55em 1.1em;font-size:.88rem}
+.cmd__icon{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--or);color:var(--encre)}
+.cmd__icon svg{width:26px;height:26px}
+
+/* ---------- Maison ---------- */
+.maison__hero{position:relative;border-radius:28px;overflow:hidden;margin-bottom:clamp(36px,5vw,64px)}
+.maison__hero img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:50% 40%}
+.maison__hero{margin:0 0 clamp(36px,5vw,64px)}
+.maison__hero .stamp{right:clamp(12px,3vw,40px);bottom:clamp(12px,3vw,40px);width:clamp(112px,14vw,170px);transform:rotate(-8deg)}
+.maison__hero .stamp strong{font-size:17cqw}
+.faits{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:clamp(18px,2.6vw,36px)}
+.fait{display:grid;gap:12px;align-content:start}
+.fait h3{font-family:var(--f-display);font-stretch:118%;font-weight:850;text-transform:uppercase;font-size:var(--t-h3);line-height:1}
+.fait p{color:var(--encre-doux)}
+.fait .label{color:var(--rouge)}
+.fait--chef{grid-column:1/6}
+.fait--produits{grid-column:7/13}
+.fait--salle{grid-column:1/8}
+.fait--soir{grid-column:9/13}
+.fait__img{border-radius:20px;overflow:hidden}
+.fait__img img{width:100%;aspect-ratio:16/10;object-fit:cover;transition:transform 1s var(--ease)}
+.fait:hover .fait__img img{transform:scale(1.04)}
+.fait--soir .fait__img img{aspect-ratio:4/5}
+.liste-produits{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.liste-produits li{display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:var(--sauge-clair)}
+.liste-produits li::before{content:"";flex:none;width:14px;height:14px;border-radius:50%;background:var(--enseigne);box-shadow:0 0 0 3px var(--sauge-clair),0 0 0 5px var(--enseigne)}
+.citation{font-family:var(--f-note);font-style:italic;font-size:clamp(1.6rem,3.4vw,2.8rem);line-height:1.12;color:var(--enseigne);max-width:22ch}
+
+
+/* ---------- Infos ---------- */
+#infos{background:var(--mie-fonce)}
+#infos .eyebrow{color:var(--enseigne)}
+.infos__grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(24px,4vw,64px);align-items:start}
+.bloc{padding:clamp(22px,3vw,34px);border-radius:24px;background:#fff8ec;border:1.5px solid rgba(22,38,27,.12);display:grid;gap:16px;align-content:start}
+.adresse{font-family:var(--f-display);font-stretch:112%;font-weight:850;text-transform:uppercase;font-size:clamp(1.5rem,2.8vw,2.3rem);line-height:1;font-style:normal}
+.adresse small{display:block;font-family:var(--f-body);text-transform:none;font-weight:500;font-size:1rem;margin-top:10px;color:var(--encre-doux);letter-spacing:0}
+.row-btns{display:flex;flex-wrap:wrap;gap:8px}
+.chip-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:.5em 1.05em;border-radius:999px;border:2px solid var(--encre);background:transparent;color:var(--encre);text-decoration:none;font-family:var(--f-display);font-stretch:80%;font-weight:750;text-transform:uppercase;letter-spacing:.04em;font-size:.86rem;cursor:pointer;transition:background .25s,color .25s}
+.chip-btn:hover{background:var(--encre);color:var(--creme)}
+.services{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.services li{display:grid;gap:8px;justify-items:start;padding:14px;border-radius:16px;background:var(--sauge-clair);font-size:.92rem;line-height:1.3}
+.services b{font-family:var(--f-display);font-stretch:80%;font-weight:800;text-transform:uppercase;letter-spacing:.03em;font-size:1rem}
+.services svg{width:28px;height:28px;color:var(--enseigne)}
+.infos__meta{display:grid;gap:6px;font-size:.95rem;color:var(--encre-doux)}
+.horaires{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.horaires th,.horaires td{text-align:left;padding:11px 0;border-bottom:1px solid rgba(22,38,27,.14);font-weight:500;vertical-align:top}
+.horaires th{font-family:var(--f-display);font-stretch:80%;font-weight:750;text-transform:uppercase;letter-spacing:.04em;font-size:.92rem;width:38%}
+.horaires td{text-align:right}
+.horaires tr.is-today th,.horaires tr.is-today td{color:var(--rouge);font-weight:700}
+.horaires .ferme{color:var(--encre-doux)}
+.statut{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;background:var(--sauge-clair);font-weight:600;font-size:.95rem;justify-self:start}
+.statut::before{content:"";width:10px;height:10px;border-radius:50%;background:#7a7a7a}
+.statut.is-open::before{background:#1f8a3b;box-shadow:0 0 0 4px rgba(31,138,59,.2);animation:pulse 2s infinite}
+.statut.is-closed::before{background:var(--rouge)}
+.note-saison{font-family:var(--f-note);font-style:italic;font-size:1.2rem;color:var(--enseigne)}
+.google{display:flex;align-items:center;gap:14px}
+.google__note{display:inline-flex;align-items:baseline;white-space:nowrap;font-family:var(--f-display);font-stretch:62%;font-weight:800;font-size:2.6rem;line-height:1}
+.copied{font-size:.85rem;color:var(--enseigne);font-weight:600}
+
+/* ---------- Pied de page ---------- */
+.footer{padding-block:clamp(56px,8vw,96px) calc(28px + env(safe-area-inset-bottom,0px));background:var(--nuit)}
+.footer__top{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(3,minmax(0,1fr));gap:32px;align-items:start;padding-bottom:40px;border-bottom:1px solid var(--ligne)}
+.footer__logo img{width:min(340px,100%);height:auto}
+.footer h2{font-family:var(--f-display);font-stretch:70%;font-weight:750;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--or);margin-bottom:12px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.footer a{text-decoration:none}
+.footer a:hover{color:var(--or)}
+.footer address{font-style:normal}
+.footer__bottom{padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.85rem;opacity:.75}
+
+/* ---------- Barre d’actions mobile ---------- */
+.actionbar{display:none}
+
+/* ---------- Apparitions ---------- */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .reveal.is-in{opacity:1;transform:none}
+.js .hero__title .ln > span{transform:translateY(105%);transition:transform 1s var(--ease)}
+.js.loaded .hero__title .ln > span{transform:none}
+.js .hero__title .ln:nth-child(2) > span{transition-delay:.12s}
+.js .hero__title .ln:nth-child(3) > span{transition-delay:.24s}
+.js .disc--main{clip-path:circle(0% at 50% 50%);transition:clip-path 1.3s var(--ease) .15s}
+.js.loaded .disc--main{clip-path:circle(50% at 50% 50%)}
+.js .stamp--hero{opacity:0;transform:scale(.6);transition:opacity .7s var(--ease) .7s,transform .9s var(--ease) .7s}
+.js .stamp--hero{transform:scale(.6) rotate(-20deg)}
+.js.loaded .stamp--hero{opacity:1;transform:rotate(12deg)}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(31,138,59,0)}}
+
+/* ---------- Tablette ---------- */
+@media (max-width:1080px){
+  .nav{display:none}
+  .menu-btn{display:grid}
+  .header__tel{display:none}
+  .faits .fait--chef,.faits .fait--produits{grid-column:span 12}
+  .fait--salle{grid-column:1/8}.fait--soir{grid-column:8/13}
+  .footer__top{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer__logo{grid-column:1/-1}
+}
+@media (max-width:900px){
+  .hero__grid{grid-template-columns:1fr}
+  .hero__visual{order:-1;justify-self:center;max-width:520px;width:92%}
+  .sec-head--split{grid-template-columns:1fr}
+  .burgers__grid{grid-template-columns:1fr}
+  .badge-prix{display:none}
+  .panel{grid-template-columns:1fr}
+  .panel__fig{position:static;max-width:420px}
+  .cmd{grid-template-columns:1fr}
+  .cmd__card{min-height:0}
+  .infos__grid{grid-template-columns:1fr}
+}
+/* ---------- Téléphone ---------- */
+@media (max-width:640px){
+  :root{--header-h:64px}
+  .header__logo img{height:40px}
+  .header .btn{display:none}
+  .hero{padding-top:18px}
+  .hero__visual{width:94%;margin-bottom:24px}
+  .hero__cta .btn{flex:1 1 100%}
+  .hero__facts{grid-template-columns:1fr;gap:0;padding-block:0;margin-top:36px}
+  .hero__facts li{flex-direction:row;align-items:baseline;justify-content:space-between;gap:12px;padding-block:14px;border-bottom:1px solid var(--ligne)}
+  .hero__facts li:last-child{border-bottom:0}
+  .hero__facts b{font-size:1.15rem}
+  .burger{padding:16px 0}
+  .burger:hover,.burger.is-active{padding-left:0}
+  .burger{grid-template-columns:60px minmax(0,1fr) auto;column-gap:14px}
+  .burger__thumb{width:60px;height:60px}
+  .burger__desc{font-size:.95rem}
+  .faits .fait{grid-column:1/-1!important}
+  .liste-produits{grid-template-columns:1fr}
+  .services{grid-template-columns:1fr}
+  .services li{grid-template-columns:auto 1fr;align-items:center;column-gap:12px}
+  .services li span{grid-column:2}
+  .maison__hero img{aspect-ratio:4/3}
+  .footer__top{grid-template-columns:1fr}
+  .actionbar{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:70;padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:rgba(27,46,32,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--ligne)}
+  .actionbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:54px;border-radius:16px;text-decoration:none;font-family:var(--f-display);font-stretch:80%;font-weight:750;text-transform:uppercase;letter-spacing:.04em;font-size:.78rem;border:1.5px solid rgba(245,237,223,.3)}
+  .actionbar a svg{width:20px;height:20px}
+  .actionbar a.is-main{background:var(--or);color:var(--encre);border-color:var(--or);font-size:.86rem}
+  body{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal,.js .hero__title .ln > span,.js .disc--main,.js .stamp--hero{opacity:1!important;transform:none!important;clip-path:none!important}
+  .js .stamp--hero{transform:rotate(12deg)!important}
+  .js .wave.draw path{stroke-dashoffset:0!important}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+
+<header class="header" id="haut">
+  <div class="wrap header__in">
+    <a class="header__logo" href="#accueil" aria-label="Maison Gaillard, retour à l’accueil">
+      <img src="img/logo-gaillard.webp" width="1000" height="325" alt="Gaillard, artisan burger &amp; pokebowl">
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#burgers">Burgers</a>
+      <a href="#carte">La carte</a>
+      <a href="#maison">La maison</a>
+      <a href="#infos">Infos</a>
+    </nav>
+    <div class="header__actions">
+      <a class="header__tel" href="tel:+33635165445"><span>Appeler</span>06 35 16 54 45</a>
+      <a class="btn" href="#commander">Commander</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" id="menu-btn"><span></span><b class="sr-only">Ouvrir le menu</b></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="drawer__top">
+    <img src="img/logo-gaillard.webp" width="1000" height="325" alt="Gaillard, artisan burger &amp; pokebowl">
+    <button class="drawer__close" type="button" id="drawer-close" aria-label="Fermer le menu">×</button>
+  </div>
+  <nav aria-label="Menu mobile">
+    <a href="#burgers">Burgers</a>
+    <a href="#carte">La carte</a>
+    <a href="#commander">Commander</a>
+    <a href="#maison">La maison</a>
+    <a href="#infos">Infos</a>
+  </nav>
+  <div class="drawer__foot">
+    <p>74 quai du Général-Leclerc, Jonquières, 13500 Martigues</p>
+    <a class="btn" href="tel:+33635165445">Appeler · 06 35 16 54 45</a>
+  </div>
+</div>
+
+<main id="contenu">
+<!-- ============ ACCUEIL ============ -->
+<section class="hero" id="accueil" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow label">Martigues · Jonquières · Quai du Général-Leclerc</p>
+        <h1 class="hero__title display" id="hero-title">
+          <span class="ln"><span>Le burger</span></span>
+          <span class="ln ln--note"><span>d’artisan,</span></span>
+          <span class="ln"><span>face à l’étang.</span></span>
+        </h1>
+        <p class="lead hero__lead">Pain Label Rouge, steak Charolais de 125&nbsp;g, poulet pané maison et sauces faites ici. Burgers et pokébowls à savourer en terrasse sur le quai, à emporter ou livrés chez vous.</p>
+        <div class="hero__cta">
+          <a class="btn" href="#burgers">Découvrir la carte <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#commander">Commander</a>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="false">
+        <figure class="disc disc--main">
+          <img src="img/burger-pain-rouge-1280.webp" srcset="img/burger-pain-rouge-720.webp 720w, img/burger-pain-rouge-1280.webp 1280w" sizes="(max-width:900px) 92vw, 46vw" width="1280" height="1467" alt="Burger au pain rouge, double steak et cheddar fondu, servi en salle" fetchpriority="high">
+        </figure>
+        <svg class="ring ring--spin ring--hero" viewBox="0 0 200 200" aria-hidden="true"><defs><path id="ring-hero" d="M100,100 m-86,0 a86,86 0 1,1 172,0 a86,86 0 1,1 -172,0"/></defs><text><textPath href="#ring-hero" id="ring-hero-text" textLength="534" lengthAdjust="spacing">Artisan burger &amp; pokebowl ✦ Martigues ✦ Fait maison ✦ </textPath></text></svg>
+        <div class="stamp stamp--hero" aria-hidden="true"><div><span>Steak</span><strong>Charolais 125&nbsp;g</strong></div></div>
+      </div>
+    </div>
+    <ul class="hero__facts">
+      <li><b>Dès 16,90&nbsp;€</b> burgers servis avec frites</li>
+      <li><b>Mar. → sam.</b> <span>midi et soir <em class="tbc" title="Horaires à confirmer">en saison 7j/7</em></span></li>
+      <li><b>Sur place</b> à emporter · livraison</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ NOS BURGERS ============ -->
+<section class="section on-light" id="burgers" aria-labelledby="burgers-t">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <div class="reveal">
+        <p class="eyebrow label">Nos burgers</p>
+        <h2 class="h2" id="burgers-t" style="margin-top:14px">Dix burgers, <span class="note">un seul pain&nbsp;:</span> Label Rouge.</h2>
+      </div>
+      <p class="lead reveal">Tous servis avec frites, salade, tomate, oignons pickles et oignons frits, cornichon. Supplément cheddar 2,00&nbsp;€, cheddar et bacon 2,50&nbsp;€.</p>
+    </div>
+
+    <div class="burgers__grid">
+      <div class="badge-prix has-photo" id="badge" aria-hidden="true">
+        <svg class="ring ring--spin" viewBox="0 0 200 200"><defs><path id="ring-badge" d="M100,100 m-90,0 a90,90 0 1,1 180,0 a90,90 0 1,1 -180,0"/></defs><text><textPath href="#ring-badge" textLength="560" lengthAdjust="spacing">Pain Label Rouge ✦ Servi avec frites ✦ Origine du bœuf : France ✦</textPath></text></svg>
+        <figure class="badge-prix__photo" aria-hidden="true"><img id="badge-img" src="img/studio-le-gaillard-720.webp" width="720" height="720" alt=""></figure>
+        <div class="badge-prix__chip" id="badge-chip"><b id="badge-chip-name">Le Gaillard</b><span id="badge-chip-price">16,90 €</span></div>
+        <div class="badge-prix__in">
+          <span class="label badge-prix__tag swap" id="badge-tag">Bœuf Charolais</span>
+          <span class="badge-prix__name swap" id="badge-name">Le Gaillard</span>
+          <span class="badge-prix__price swap" id="badge-price">16,90<sup>€</sup></span>
+          <span class="badge-prix__desc swap" id="badge-desc">Steak Charolais 125 g, sauce fumée, cheddar.</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="groupe"><span class="label">Les classiques</span><span class="note">16,90&nbsp;€</span></h3>
+        <ul class="carte-list">
+          <li data-img="img/studio-le-gaillard-720.webp" class="burger is-active" tabindex="0" data-tag="Bœuf Charolais">
+            <span class="burger__thumb"><img src="img/studio-le-gaillard-720.webp" width="720" height="720" alt="Le Gaillard, photo de la maison" loading="lazy"></span>
+            <h4 class="burger__name">Le Gaillard</h4>
+            <span class="price"><span class="tbc" title="Prix masqué sur la photo de la carte, à confirmer">16,90</span><small>€</small></span>
+            <p class="burger__desc">Steak Charolais 125&nbsp;g, sauce fumée, cheddar.</p>
+            <p class="burger__tags"><span class="tag">Bœuf Charolais</span></p>
+          </li>
+          <li class="burger" tabindex="0" data-tag="Poulet · halal">
+            <span class="burger__thumb burger__thumb--vide" aria-hidden="true"><span>photo<br>à venir</span></span>
+            <h4 class="burger__name">Le Boursin</h4>
+            <span class="price">16,90<small>€</small></span>
+            <p class="burger__desc">Filet de poulet pané maison (halal), Boursin.</p>
+            <p class="burger__tags"><span class="tag tag--poulet">Poulet pané maison · halal</span></p>
+          </li>
+          <li class="burger" tabindex="0" data-tag="Poulet · halal">
+            <span class="burger__thumb burger__thumb--vide" aria-hidden="true"><span>photo<br>à venir</span></span>
+            <h4 class="burger__name">L’Avocado</h4>
+            <span class="price">16,90<small>€</small></span>
+            <p class="burger__desc">Filet de poulet pané maison (halal), guacamole, œuf, mayonnaise à l’ail.</p>
+            <p class="burger__tags"><span class="tag tag--poulet">Poulet pané maison · halal</span></p>
+          </li>
+          <li class="burger" tabindex="0" data-tag="Bœuf Charolais">
+            <span class="burger__thumb burger__thumb--vide" aria-hidden="true"><span>photo<br>à venir</span></span>
+            <h4 class="burger__name">Le Chèvre Miel</h4>
+            <span class="price">16,90<small>€</small></span>
+            <p class="burger__desc">Steak Charolais 125&nbsp;g, sauce moutarde à l’ancienne et miel, chèvre.</p>
+            <p class="burger__tags"><span class="tag">Bœuf Charolais</span></p>
+          </li>
+          <li data-img="img/studio-halloumi-grill-720.webp" class="burger" tabindex="0" data-tag="Halloumi">
+            <span class="burger__thumb"><img src="img/studio-halloumi-grill-720.webp" width="720" height="720" alt="L’Halloumi Grill, photo de la maison" loading="lazy"></span>
+            <h4 class="burger__name">L’Halloumi Grill</h4>
+            <span class="price">16,90<small>€</small></span>
+            <p class="burger__desc">Fromage halloumi frit, mayonnaise à l’ail, galette de pomme de terre.</p>
+            <p class="burger__tags"><span class="tag tag--veg">Halloumi</span></p>
+          </li>
+        </ul>
+
+        <h3 class="groupe"><span class="label">Les signatures</span><span class="note">19,90&nbsp;€</span></h3>
+        <ul class="carte-list">
+          <li data-img="img/studio-le-truffe-720.webp" class="burger" tabindex="0" data-tag="Bœuf Charolais">
+            <span class="burger__thumb"><img src="img/studio-le-truffe-720.webp" width="720" height="720" alt="Le Truffe, photo de la maison" loading="lazy"></span>
+            <h4 class="burger__name">Le Truffe</h4>
+            <span class="price">19,90<small>€</small></span>
+            <p class="burger__desc">Pain à l’encre de seiche, steak Charolais 125&nbsp;g, bacon, mayonnaise à la truffe, cheddar.</p>
+            <p class="burger__tags"><span class="tag">Bœuf Charolais</span></p>
+          </li>
+          <li data-img="img/studio-le-poivre-720.webp" class="burger" tabindex="0" data-tag="Bœuf Charolais">
+            <span class="burger__thumb"><img src="img/studio-le-poivre-720.webp" width="720" height="720" alt="Le Poivre, photo de la maison" loading="lazy"></span>
+            <h4 class="burger__name">Le Poivre</h4>
+            <span class="price">19,90<small>€</small></span>
+            <p class="burger__desc">Steak Charolais 125&nbsp;g, œuf, bacon, sauce poivre, cheddar.</p>
+            <p class="burger__tags"><span class="tag">Bœuf Charolais</span></p>
+          </li>
+          <li data-img="img/studio-le-raclette-720.webp" class="burger" tabindex="0" data-tag="Bœuf Charolais">
+            <span class="burger__thumb"><img src="img/studio-le-raclette-720.webp" width="720" height="720" alt="Le Raclette, photo de la maison" loading="lazy"></span>
+            <h4 class="burger__name">Le Raclette</h4>
+            <span class="price">19,90<small>€</small></span>
+            <p class="burger__desc">Steak Charolais 125&nbsp;g, galette de pomme de terre, fromage à raclette, bacon, sauce poivre.</p>
+            <p class="burger__tags"><span class="tag">Bœuf Charolais</span></p>
+          </li>
+          <li class="burger" tabindex="0" data-tag="Bœuf Charolais">
+            <span class="burger__thumb burger__thumb--vide" aria-hidden="true"><span>photo<br>à venir</span></span>
+            <h4 class="burger__name">Le Volcano</h4>
+            <span class="price">19,90<small>€</small></span>
+            <p class="burger__desc">Steak Charolais 125&nbsp;g, sauce fumée, cheddar, <span class="tbc" title="Passage masqué sur la photo de la carte">pain à l’encre de seiche</span>.</p>
+            <p class="burger__tags"><span class="tag">Bœuf Charolais</span></p>
+          </li>
+          <li class="burger" tabindex="0" data-tag="Bœuf Charolais">
+            <span class="burger__thumb burger__thumb--vide" aria-hidden="true"><span>photo<br>à venir</span></span>
+            <h4 class="burger__name">Le Corse</h4>
+            <span class="price">19,90<small>€</small></span>
+            <p class="burger__desc">Steak Charolais 125&nbsp;g, sauce moutarde à l’ancienne et miel, <span class="tbc" title="Passage masqué sur la photo de la carte">figatelli</span>, brebis.</p>
+            <p class="burger__tags"><span class="tag">Bœuf Charolais</span></p>
+          </li>
+        </ul>
+        <div class="burgers__foot">
+          <p>Origine du bœuf&nbsp;: France.</p>
+          <a class="btn btn--dark" href="#commander">Commander <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA CARTE ============ -->
+<section class="section on-sauge on-light" id="carte" aria-labelledby="carte-t" style="background:var(--sauge)">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <div class="reveal">
+        <p class="eyebrow label">La carte</p>
+        <h2 class="h2" id="carte-t" style="margin-top:14px">Pokébowls, salades <span class="note">et douceurs.</span></h2>
+      </div>
+      <p class="lead reveal">Les burgers sont plus haut. Ici, le reste de la carte, avec les prix affichés en salle.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Rubriques de la carte">
+      <button class="tab" role="tab" id="tab-bowls" aria-controls="p-bowls" aria-selected="true">Pokébowls</button>
+      <button class="tab" role="tab" id="tab-salades" aria-controls="p-salades" aria-selected="false" tabindex="-1">Salades</button>
+      <button class="tab" role="tab" id="tab-faims" aria-controls="p-faims" aria-selected="false" tabindex="-1">Petites faims</button>
+      <button class="tab" role="tab" id="tab-formules" aria-controls="p-formules" aria-selected="false" tabindex="-1">Formules</button>
+      <button class="tab" role="tab" id="tab-desserts" aria-controls="p-desserts" aria-selected="false" tabindex="-1">Desserts</button>
+      <button class="tab" role="tab" id="tab-boire" aria-controls="p-boire" aria-selected="false" tabindex="-1">À boire</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-bowls" aria-labelledby="tab-bowls" tabindex="0">
+      <div>
+        <p class="panel__base"><b>La base</b>Riz japonais vinaigré, <span class="tbc" title="Passage masqué sur la photo de la carte">…</span>, avocat, soja, carotte, sauce teriyaki maison, jeunes pousses, oignons frits.</p>
+        <div class="item"><h3>Le Poulet croustillant</h3><span class="price">16,90<small>€</small></span><p>Filet de poulet pané maison, mayonnaise spicy.</p></div>
+        <div class="item"><h3>Le Tempura de crevette</h3><span class="price">16,90<small>€</small></span><p>Beignets de crevette tempura, mayonnaise spicy.</p></div>
+        <div class="item"><h3>Le Gyoza</h3><span class="price">16,90<small>€</small></span><p>Gyozas de légumes.</p></div>
+      </div>
+      <figure class="panel__fig">
+        <img src="img/studio-bowl-poulet-720.webp" width="720" height="720" alt="Pokébowl au poulet croustillant et mayonnaise spicy" loading="lazy">
+        <figcaption class="note">Le Poulet croustillant.</figcaption>
+      </figure>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-salades" aria-labelledby="tab-salades" tabindex="0" hidden>
+      <div>
+        <p class="panel__base"><b>La base</b>Salade romaine, tomate, oignons pickles, œuf dur, bacon, croûtons aillés.</p>
+        <div class="item"><h3>La César</h3><span class="price">15,90<small>€</small></span><p>Poulet pané maison (halal), sauce César maison, parmesan.</p></div>
+        <div class="item"><h3>Le Chèvre Miel</h3><span class="price">15,90<small>€</small></span><p>Sauce moutarde à l’ancienne et miel, chèvre chaud, miel.</p></div>
+      </div>
+      <figure class="panel__fig">
+        <img src="img/studio-salade-cesar-720.webp" width="720" height="720" alt="Salade César au poulet pané maison, œuf dur et tomates" loading="lazy">
+        <figcaption class="note">La César.</figcaption>
+      </figure>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-faims" aria-labelledby="tab-faims" tabindex="0" hidden>
+      <div>
+        <div class="item"><h3>Croque Gaillard</h3><span class="price">5,00<small>€</small></span><p>Jambon, cheddar.</p></div>
+        <div class="item"><h3>Croque truffe</h3><span class="price">7,00<small>€</small></span><p>Jambon, cheddar, mayo truffe.</p></div>
+        <div class="item"><h3>Panisses artisanales</h3><span class="price">6,00<small>€</small></span></div>
+        <div class="item"><h3>Portion de frites</h3><span class="price">5,00<small>€</small></span></div>
+        <div class="item"><h3>Gyoza ×5</h3><span class="price">6,00<small>€</small></span></div>
+        <div class="item"><h3>Tempura de crevette ×7</h3><span class="price">6,00<small>€</small></span></div>
+        <div class="item"><h3>Cheeseburger</h3><span class="price">7,00<small>€</small></span><p>Salade, cornichon, tomate.</p></div>
+        <div class="item"><h3>Poulets panés maison</h3><span class="price" style="font-size:1.15rem">×4 4,00 · ×8 7,00 · ×12 11,00&nbsp;€</span></div>
+        <p class="panel__note"><span class="tbc" title="À confirmer">Prix de la carte précédente</span>, en partie confirmés par la fiche de l’office de tourisme régional 2026.</p>
+      </div>
+      <figure class="panel__fig">
+        <img src="img/studio-poulets-panes-720.webp" width="720" height="720" alt="Poulets panés maison sur une assiette" loading="lazy">
+        <figcaption class="note">Les poulets panés maison.</figcaption>
+      </figure>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-formules" aria-labelledby="tab-formules" tabindex="0" hidden>
+      <div>
+        <div class="formule">
+          <div class="formule__row"><h3>Formule du midi</h3><span class="price">19,90<small>€</small></span></div>
+          <p>Un plat au choix à la carte et une boisson.</p>
+          <div class="formule__row" style="margin-top:6px"><span class="label" style="color:var(--or)">Formule complète, avec dessert</span><span class="price" style="font-size:1.6rem">22,90<small>€</small></span></div>
+        </div>
+        <div class="formule" style="background:var(--enseigne)">
+          <div class="formule__row"><h3>Menu enfant</h3><span class="price">10<small>€</small></span></div>
+          <p>Au choix&nbsp;: hamburger, 4 nuggets maison ou croque Gaillard, avec frites et Capri-Sun.</p>
+        </div>
+        <p class="panel__note"><span class="tbc" title="À confirmer">D’après vos affiches «&nbsp;Le repère des familles&nbsp;» et «&nbsp;Le repère des entreprises&nbsp;».</span></p>
+      </div>
+      <figure class="panel__fig">
+        <img src="img/terrasse-quai-1280.webp" width="1280" height="672" alt="La terrasse ombragée devant le restaurant, avec palmiers en pots" loading="lazy" style="aspect-ratio:4/3">
+        <figcaption class="note">Le déjeuner, en terrasse sur le quai.</figcaption>
+      </figure>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-desserts" aria-labelledby="tab-desserts" tabindex="0" hidden>
+      <div>
+        <div class="item"><h3>Tarte au citron meringuée</h3><span class="price">5,00<small>€</small></span></div>
+        <div class="item"><h3>Tarte Tatin aux pommes</h3><span class="price">5,00<small>€</small></span></div>
+        <div class="item"><h3>Tiramisu</h3><span class="price">5,00<small>€</small></span></div>
+        <div class="item"><h3>Cheesecake Oreo</h3><span class="price">5,00<small>€</small></span></div>
+        <div class="item"><h3>Tarte au Daim</h3><span class="price">5,00<small>€</small></span></div>
+        <div class="item"><h3>Muffin vanille aux pépites de chocolat</h3><span class="price">5,00<small>€</small></span></div>
+        <div class="item"><h3>Muffin tout chocolat fourré</h3><span class="price">5,00<small>€</small></span></div>
+        <p class="panel__note"><span class="tbc" title="À confirmer">Prix affichés sur votre site de commande en ligne.</span></p>
+      </div>
+      <figure class="panel__fig">
+        <img src="img/studio-tarte-citron-720.webp" width="720" height="720" alt="Part de tarte au citron meringuée" loading="lazy">
+        <figcaption class="note">La tarte au citron meringuée.</figcaption>
+      </figure>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-boire" aria-labelledby="tab-boire" tabindex="0" hidden>
+      <div>
+        <div class="item"><h3>Bella Fragola</h3><span class="price"><span class="tbc" title="Prix à compléter">—</span></span><p>Le cocktail maison&nbsp;: fraise, prosecco, yuzu.</p></div>
+        <div class="item"><h3>Limonade bio</h3><span class="price"><span class="tbc" title="Prix à compléter">—</span></span></div>
+        <div class="item"><h3>Vins &amp; bières</h3><span class="price"><span class="tbc" title="Prix à compléter">—</span></span></div>
+        <p class="panel__note">Cocktails avec ou sans alcool selon les saisons.</p>
+      </div>
+      <figure class="panel__fig">
+        <img src="img/cocktail-neon-720.webp" width="720" height="701" alt="Le cocktail Bella Fragola levé devant le néon du bar" loading="lazy" style="aspect-ratio:1">
+        <figcaption class="note">Le Bella Fragola, sous le néon.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMANDER ============ -->
+<section class="section commander" id="commander" aria-labelledby="cmd-t">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <div class="reveal">
+        <p class="eyebrow label">Commander</p>
+        <h2 class="h2" id="cmd-t" style="margin-top:14px">Une faim de quai&nbsp;? <span class="note">Trois façons</span> de commander.</h2>
+      </div>
+      <p class="lead reveal">Sur place, à emporter ou livré à Martigues&nbsp;: choisissez ce qui vous arrange.</p>
+    </div>
+    <div class="cmd">
+      <a class="cmd__card reveal" href="https://maisongaillard-martigues.fr/" target="_blank" rel="noopener">
+        <span class="cmd__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/><circle cx="10" cy="20.5" r="1.2"/><circle cx="17" cy="20.5" r="1.2"/></svg></span>
+        <h3>En ligne</h3>
+        <p>Composez votre commande sur notre site de commande, <span class="tbc" title="Module de commande à confirmer">à retirer ou en livraison</span>.</p>
+        <span class="cmd__go">Commander en ligne <i aria-hidden="true">→</i></span>
+      </a>
+      <a class="cmd__card reveal" href="https://www.ubereats.com/fr/store/maison-gaillard-burgers-%26-poke/GGtQcrQAXiOe_5qESx6n_w" target="_blank" rel="noopener">
+        <span class="cmd__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h6l3-7h3M9 10h4l2 7"/><path d="M14 6h3"/></svg></span>
+        <h3>Uber Eats</h3>
+        <p>Burgers et pokébowls livrés chez vous à Martigues.</p>
+        <span class="cmd__go">Voir sur Uber Eats <i aria-hidden="true">→</i></span>
+      </a>
+      <div class="cmd__card cmd__card--tel reveal">
+        <span class="cmd__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>
+        <h3>Par téléphone</h3>
+        <p>Pour une commande à emporter <span class="tbc" title="À confirmer">ou une réservation</span>.</p>
+        <span class="cmd__num" id="tel-num">06 35 16 54 45</span>
+        <div class="cmd__btns">
+          <a class="btn" href="tel:+33635165445">Appeler</a>
+          <button class="btn btn--ghost" type="button" data-copy="06 35 16 54 45" data-copy-label="Numéro copié">Copier</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA MAISON ============ -->
+<section class="section on-light" id="maison" aria-labelledby="maison-t">
+  <div class="wrap">
+    <div class="sec-head sec-head--split">
+      <div class="reveal">
+        <p class="eyebrow label">La maison</p>
+        <h2 class="h2" id="maison-t" style="margin-top:14px">Une maison <span class="note">sur le quai</span> de Jonquières.</h2>
+      </div>
+      <p class="citation reveal">Des burgers d’artisan, des pokébowls, et l’étang de Berre en face.</p>
+    </div>
+
+    <figure class="maison__hero reveal" style="margin-top:0">
+      <img src="img/facade-1280.webp" srcset="img/facade-720.webp 720w, img/facade-1280.webp 1280w" sizes="(max-width:1320px) 100vw, 1220px" width="1280" height="590" alt="La façade de Maison Gaillard, son enseigne et sa terrasse sur le quai" loading="lazy">
+      <div class="stamp" aria-hidden="true"><div><span>Terrasse</span><strong>40 places</strong><span>face à l’étang</span></div></div>
+    </figure>
+
+    <svg class="wave draw" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true"><path d="M0 14 C 50 2, 100 2, 150 14 S 250 26, 300 14 S 400 2, 450 14 S 550 26, 600 14 S 700 2, 750 14 S 850 26, 900 14 S 1000 2, 1050 14 S 1150 26, 1200 14"/></svg>
+
+    <div class="faits" style="margin-top:clamp(36px,5vw,64px)">
+      <article class="fait fait--chef reveal">
+        <p class="label">Aux fourneaux</p>
+        <h3>Fabien Morreale</h3>
+        <p><span class="tbc" title="Informations publiques à confirmer avec vous">Né à Martigues, formé auprès de Jacques Chibois à Grasse et de Guillaume Sourrieux à Marseille, passé par Top Chef.</span> À la carte&nbsp;: poulet pané maison, sauces César et teriyaki faites sur place, et une nouvelle recette à l’ardoise chaque semaine.</p>
+      </article>
+      <article class="fait fait--produits reveal">
+        <p class="label">Dans le pain</p>
+        <h3>Ce qu’on y met</h3>
+        <ul class="liste-produits">
+          <li>Pain Label Rouge</li>
+          <li>Steak Charolais 125&nbsp;g</li>
+          <li>Bœuf d’origine France</li>
+          <li>Poulet pané maison, halal</li>
+          <li>Sauces César et teriyaki maison</li>
+          <li>Panisses artisanales</li>
+        </ul>
+        <p>Les produits en circuit court sont privilégiés.</p>
+      </article>
+      <article class="fait fait--salle reveal">
+        <div class="fait__img"><img src="img/salle-banquette-1280.webp" srcset="img/salle-banquette-720.webp 720w, img/salle-banquette-1280.webp 1280w" sizes="(max-width:640px) 100vw, 58vw" width="1280" height="717" alt="La salle : banquette aux coussins colorés, tables en bois, plantes et néon" loading="lazy"></div>
+        <p class="label">Le lieu</p>
+        <h3>Deux salles, une terrasse</h3>
+        <p>Une salle climatisée, une banquette aux coussins colorés, des néons au mur, et la terrasse sur le quai. Accès de plain-pied pour les fauteuils roulants, animaux bienvenus.</p>
+      </article>
+      <article class="fait fait--soir reveal">
+        <div class="fait__img"><img src="img/cocktail-neon-720.webp" width="720" height="701" alt="Cocktail Bella Fragola levé devant le néon du bar" loading="lazy"></div>
+        <p class="label">Le soir</p>
+        <h3>Cocktails maison</h3>
+        <p>Bella Fragola, limonade bio, vins et bières. Et quelques soirs de musique live.</p>
+      </article>
+    </div>
+    <div class="insta reveal">
+      <p class="note">Plus de photos au quotidien sur Instagram.</p>
+      <a class="btn btn--dark" href="https://www.instagram.com/maison_gaillard_martigues/" target="_blank" rel="noopener">@maison_gaillard_martigues <span class="arr" aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INFOS PRATIQUES ============ -->
+<section class="section on-light" id="infos" aria-labelledby="infos-t">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow label reveal">Infos pratiques</p>
+      <h2 class="h2 reveal" id="infos-t">Rendez-vous <span class="note">sur le quai.</span></h2>
+    </div>
+    <div class="infos__grid">
+      <div class="bloc reveal">
+        <address class="adresse">74 quai du Général-Leclerc<small>Jonquières, 13500 Martigues · au bord de l’étang de Berre</small></address>
+        <div class="row-btns">
+          <a class="chip-btn" href="https://www.google.com/maps/search/?api=1&amp;query=Maison%20Gaillard%2074%20quai%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2013500%20Martigues" target="_blank" rel="noopener">Google Maps ↗</a>
+          <a class="chip-btn" href="https://maps.apple.com/?q=Maison%20Gaillard&amp;ll=43.401572,5.059108" target="_blank" rel="noopener">Plans ↗</a>
+          <a class="chip-btn" href="https://waze.com/ul?ll=43.401572,5.059108&amp;navigate=yes" target="_blank" rel="noopener">Waze ↗</a>
+          <button class="chip-btn" type="button" data-copy="74 quai du Général-Leclerc, 13500 Martigues" data-copy-label="Adresse copiée">Copier l’adresse</button>
+        </div>
+        <span class="copied" id="copied" role="status" aria-live="polite"></span>
+        <ul class="services">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 11h16M6 11v9M18 11v9M4 7c3-3 13-3 16 0"/></svg><b>Sur place</b><span>Salle climatisée et terrasse</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.5 12h-11z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><b>À emporter</b><span>Par téléphone ou en ligne</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h6l3-7h3M9 10h4l2 7"/></svg><b>Livraison</b><span>Avec Uber Eats</span></li>
+        </ul>
+        <div class="infos__meta">
+          <p><strong>Téléphone&nbsp;:</strong> 06 35 16 54 45</p>
+          <p><strong>Paiement&nbsp;:</strong> carte bancaire, American Express, sans contact, Apple Pay, espèces, titres-restaurant.</p>
+          <p><strong>Accessibilité&nbsp;:</strong> entrée de plain-pied, table accessible en fauteuil roulant.</p>
+        </div>
+      </div>
+      <div class="bloc reveal">
+        <span class="statut" id="statut">Horaires</span>
+        <table class="horaires" aria-describedby="h-note">
+          <caption class="sr-only">Horaires d’ouverture</caption>
+          <tbody id="horaires-body">
+            <tr data-day="1"><th scope="row">Lundi</th><td class="ferme">Fermé</td></tr>
+            <tr data-day="2"><th scope="row">Mardi</th><td>11h30 – 13h30<br>18h30 – 21h30</td></tr>
+            <tr data-day="3"><th scope="row">Mercredi</th><td>11h30 – 13h30<br>18h30 – 21h30</td></tr>
+            <tr data-day="4"><th scope="row">Jeudi</th><td>11h30 – 13h30<br>18h30 – 21h30</td></tr>
+            <tr data-day="5"><th scope="row">Vendredi</th><td>11h30 – 13h30<br>18h30 – 21h30</td></tr>
+            <tr data-day="6"><th scope="row">Samedi</th><td>11h30 – 13h30<br>18h30 – 21h30</td></tr>
+            <tr data-day="0"><th scope="row">Dimanche</th><td class="ferme">Fermé</td></tr>
+          </tbody>
+        </table>
+        <p class="note-saison" id="h-note"><span class="tbc" title="Horaires à confirmer : les sources publiques ne concordent pas">En saison, ouvert 7j/7 midi et soir.</span></p>
+        <div class="google">
+          <span class="google__note"><span class="tbc" title="Note à vérifier au moment de la mise en ligne">4,5</span><small style="font-size:.5em;margin-left:4px">/5</small></span>
+          <p>Note moyenne sur Google, d’après vos clients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <a class="footer__logo" href="#accueil" aria-label="Retour en haut de page"><img src="img/logo-gaillard.webp" width="1000" height="325" alt="Gaillard, artisan burger &amp; pokebowl" loading="lazy"></a>
+      <div>
+        <h2>Adresse</h2>
+        <address>74 quai du Général-Leclerc<br>Jonquières, 13500 Martigues</address>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="tel:+33635165445">06 35 16 54 45</a></li>
+          <li><a href="https://www.instagram.com/maison_gaillard_martigues/" target="_blank" rel="noopener">Instagram ↗</a></li>
+          <li><a href="https://www.ubereats.com/fr/store/maison-gaillard-burgers-%26-poke/GGtQcrQAXiOe_5qESx6n_w" target="_blank" rel="noopener">Uber Eats ↗</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>La carte</h2>
+        <ul>
+          <li><a href="#burgers">Burgers</a></li>
+          <li><a href="#carte">Pokébowls &amp; salades</a></li>
+          <li><a href="#commander">Commander</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© Maison Gaillard · Artisan burger &amp; pokébowl · Martigues</p>
+      <p>Maquette v1 · mentions légales et confidentialité ajoutées au site définitif</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="actionbar" aria-label="Actions rapides">
+  <a href="tel:+33635165445"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>Appeler</a>
+  <a href="https://www.google.com/maps/search/?api=1&amp;query=Maison%20Gaillard%2074%20quai%20du%20G%C3%A9n%C3%A9ral%20Leclerc%2013500%20Martigues" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Itinéraire</a>
+  <a class="is-main" href="#commander"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6.2"/></svg>Commander</a>
+</nav>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add('loaded')));
+
+  /* En-tête */
+  const header = document.querySelector('.header');
+  const onScroll = () => header.classList.toggle('is-scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  /* Menu mobile */
+  const drawer = document.getElementById('drawer'), menuBtn = document.getElementById('menu-btn'), closeBtn = document.getElementById('drawer-close');
+  const setMenu = open => { drawer.classList.toggle('is-open', open); menuBtn.setAttribute('aria-expanded', open); document.body.style.overflow = open ? 'hidden' : ''; (open ? closeBtn : menuBtn).focus(); };
+  menuBtn.addEventListener('click', () => setMenu(true));
+  closeBtn.addEventListener('click', () => setMenu(false));
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('is-open')) setMenu(false); });
+
+  /* Apparitions au défilement (le contenu reste visible sans script) */
+  const reveals = document.querySelectorAll('.reveal, .wave.draw');
+  document.querySelectorAll('.wave.draw path').forEach(p => { try { p.parentNode.style.setProperty('--len', Math.ceil(p.getTotalLength())); } catch (e) {} });
+  if ('IntersectionObserver' in window && !reduce) {
+    const io = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px', threshold: .08 });
+    reveals.forEach(el => io.observe(el));
+  } else reveals.forEach(el => el.classList.add('is-in'));
+
+  /* Lien actif dans la navigation */
+  const navLinks = [...document.querySelectorAll('.nav a')];
+  if ('IntersectionObserver' in window) {
+    const so = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) navLinks.forEach(a => a.setAttribute('aria-current', a.getAttribute('href') === '#' + en.target.id)); }), { rootMargin: '-45% 0px -50% 0px' });
+    ['burgers','carte','maison','infos'].forEach(id => { const s = document.getElementById(id); if (s) so.observe(s); });
+  }
+
+
+  /* Badge de prix qui suit le burger survolé */
+  const badge = document.getElementById('badge');
+  const bName = document.getElementById('badge-name'), bPrice = document.getElementById('badge-price'), bDesc = document.getElementById('badge-desc'), bTag = document.getElementById('badge-tag');
+  const burgers = [...document.querySelectorAll('.burger')];
+  let current = burgers[0];
+  const show = li => {
+    if (li === current) return; current = li;
+    burgers.forEach(b => b.classList.toggle('is-active', b === li));
+    badge.classList.add('is-swapping');
+    setTimeout(() => {
+      bName.textContent = li.querySelector('.burger__name').textContent;
+      bPrice.innerHTML = li.querySelector('.price').textContent.replace('€', '').trim() + '<sup>€</sup>';
+      bDesc.textContent = li.querySelector('.burger__desc').textContent;
+      bTag.textContent = li.dataset.tag;
+      const img = li.dataset.img;
+      badge.classList.toggle('has-photo', !!img);
+      if (img) { document.getElementById('badge-img').src = img; document.getElementById('badge-chip-name').textContent = bName.textContent; document.getElementById('badge-chip-price').textContent = li.querySelector('.price').textContent.replace('€', ' €').trim(); }
+      badge.classList.remove('is-swapping');
+    }, reduce ? 0 : 180);
+  };
+  burgers.forEach(li => { li.addEventListener('mouseenter', () => show(li)); li.addEventListener('focus', () => show(li)); });
+
+  /* Onglets de la carte */
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const select = t => {
+    tabs.forEach(x => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; document.getElementById(x.getAttribute('aria-controls')).hidden = !on; });
+    t.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduce ? 'auto' : 'smooth' });
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => select(t));
+    t.addEventListener('keydown', e => {
+      let n = null;
+      if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (e.key === 'Home') n = tabs[0];
+      if (e.key === 'End') n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); select(n); n.focus(); }
+    });
+  });
+
+  /* Copier adresse / numéro */
+  const live = document.getElementById('copied');
+  document.querySelectorAll('[data-copy]').forEach(btn => btn.addEventListener('click', () => {
+    const txt = btn.dataset.copy, msg = btn.dataset.copyLabel || 'Copié';
+    const done = () => { live.textContent = msg; const old = btn.textContent; btn.textContent = 'Copié ✓'; setTimeout(() => { btn.textContent = old; live.textContent = ''; }, 2200); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done).catch(() => { live.textContent = txt; });
+    else live.textContent = txt;
+  }));
+
+  /* Ouvert maintenant ? (heure de Paris) */
+  const H = { 2: [[690, 810], [1110, 1290]], 3: [[690, 810], [1110, 1290]], 4: [[690, 810], [1110, 1290]], 5: [[690, 810], [1110, 1290]], 6: [[690, 810], [1110, 1290]] };
+  try {
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Paris', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+    const get = t => parts.find(p => p.type === t).value;
+    const day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday'));
+    const min = +get('hour') * 60 + +get('minute');
+    const row = document.querySelector(`#horaires-body tr[data-day="${day}"]`); if (row) row.classList.add('is-today');
+    const st = document.getElementById('statut');
+    const slots = H[day] || [];
+    const open = slots.find(([a, b]) => min >= a && min < b);
+    const fmt = m => `${Math.floor(m / 60)}h${String(m % 60).padStart(2, '0')}`;
+    if (open) { st.classList.add('is-open'); st.textContent = `Ouvert maintenant · jusqu’à ${fmt(open[1])}`; }
+    else {
+      const next = slots.find(([a]) => a > min);
+      st.classList.add('is-closed');
+      st.textContent = next ? `Fermé · ouvre à ${fmt(next[0])}` : 'Fermé pour le moment';
+    }
+  } catch (e) {}
+})();
+</script>
+</body>
+</html>
