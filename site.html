@@ -299,6 +299,17 @@ a.cmd__card:hover .cmd__go i{transform:rotate(-45deg)}
 .citation{font-family:var(--f-note);font-style:italic;font-size:clamp(1.6rem,3.4vw,2.8rem);line-height:1.12;color:var(--enseigne);max-width:22ch}
 
 
+/* ---------- Allergies ---------- */
+.allergies{display:flex;gap:16px;align-items:flex-start;margin-top:clamp(32px,5vw,56px);padding:20px 22px;border:2px solid var(--encre);border-radius:18px;background:var(--creme);color:var(--encre)}
+.allergies svg{flex:none;width:30px;height:30px;color:var(--rouge);margin-top:2px}
+.allergies h3{margin:0 0 4px;font-family:var(--f-display);font-stretch:75%;font-weight:800;text-transform:uppercase;letter-spacing:.04em;font-size:1.05rem}
+.allergies p{margin:0;font-size:.98rem;line-height:1.5;color:var(--encre-doux)}
+.allergies a{color:var(--rouge);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.allergies a:hover{text-decoration-thickness:2px}
+.burgers__info{display:grid;gap:4px}
+.burgers__allerg{margin:0;font-size:.9rem;color:var(--encre-doux);max-width:52ch}
+.burgers__allerg a{color:var(--rouge);font-weight:700}
+
 /* ---------- Infos ---------- */
 #infos{background:var(--mie-fonce)}
 #infos .eyebrow{color:var(--enseigne)}
@@ -598,7 +609,8 @@ a.cmd__card:hover .cmd__go i{transform:rotate(-45deg)}
           </li>
         </ul>
         <div class="burgers__foot">
-          <p>Origine du bœuf&nbsp;: France.</p>
+          <div class="burgers__info"><p style="margin:0">Origine du bœuf&nbsp;: France.</p>
+          <p class="burgers__allerg">Une allergie&nbsp;? <a href="tel:+33635165445">Contactez le restaurant</a> avant de commander.</p></div>
           <a class="btn btn--dark" href="#commander">Commander <span class="arr" aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -717,6 +729,13 @@ a.cmd__card:hover .cmd__go i{transform:rotate(-45deg)}
         <figcaption class="note">Le Bella Fragola, sous le néon.</figcaption>
       </figure>
     </div>
+    <aside class="allergies reveal" aria-labelledby="allerg-t">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.01"/></svg>
+      <div>
+        <h3 id="allerg-t">Allergies &amp; intolérances alimentaires</h3>
+        <p>Nos plats peuvent contenir ou avoir été en contact avec l’un des 14&nbsp;allergènes réglementaires (gluten, lait, œufs, poisson, fruits à coque, sésame, moutarde…). Si vous avez une allergie ou une intolérance alimentaire, <strong>merci de le signaler au restaurant</strong> avant de commander&nbsp;: <a href="tel:+33635165445">06&nbsp;35&nbsp;16&nbsp;54&nbsp;45</a>. L’équipe vous renseignera sur la composition de chaque plat.</p>
+      </div>
+    </aside>
   </div>
 </section>
 
@@ -839,6 +858,7 @@ a.cmd__card:hover .cmd__go i{transform:rotate(-45deg)}
         <div class="infos__meta">
           <p><strong>Téléphone&nbsp;:</strong> 06 35 16 54 45</p>
           <p><strong>Paiement&nbsp;:</strong> carte bancaire, American Express, sans contact, Apple Pay, espèces, titres-restaurant.</p>
+          <p><strong>Allergies&nbsp;:</strong> en cas d’allergie ou d’intolérance alimentaire, merci de contacter le restaurant avant de commander.</p>
           <p><strong>Accessibilité&nbsp;:</strong> entrée de plain-pied, table accessible en fauteuil roulant.</p>
         </div>
       </div>
